@@ -5,8 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Usuarios\Models\" />
-    <Folder Include="Usuarios\Queries\" />
+    <ProjectReference Include="..\TesteTecnicoConfitec.Domain\TesteTecnicoConfitec.Domain.csproj" />
   </ItemGroup>
 
 </Project>

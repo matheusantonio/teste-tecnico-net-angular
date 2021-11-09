@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "TesteTecnicoConfitec.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/TesteTecnicoConfitec.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TesteTecnicoConfitec.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "TesteTecnicoConfitec.Domain/1.0.0": {
+      "type": "project",
+      "path": "../TesteTecnicoConfitec.Domain/TesteTecnicoConfitec.Domain.csproj",
+      "msbuildProject": "../TesteTecnicoConfitec.Domain/TesteTecnicoConfitec.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "TesteTecnicoConfitec.Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\mathe\\.nuget\\packages\\": {},
@@ -41,7 +60,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\mathe\\source\\repos\\TesteTecnicoConfitec\\TesteTecnicoConfitec.Domain\\TesteTecnicoConfitec.Domain.csproj": {
+              "projectPath": "C:\\Users\\mathe\\source\\repos\\TesteTecnicoConfitec\\TesteTecnicoConfitec.Domain\\TesteTecnicoConfitec.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

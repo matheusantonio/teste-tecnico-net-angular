@@ -5,9 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="CQRS\" />
-    <Folder Include="Persistence\Core\" />
-    <Folder Include="Persistence\Usuarios\" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.21" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TesteTecnicoConfitec.Domain\TesteTecnicoConfitec.Domain.csproj" />
+    <ProjectReference Include="..\TesteTecnicoConfitec.ReadModels\TesteTecnicoConfitec.ReadModels.csproj" />
   </ItemGroup>
 
 </Project>

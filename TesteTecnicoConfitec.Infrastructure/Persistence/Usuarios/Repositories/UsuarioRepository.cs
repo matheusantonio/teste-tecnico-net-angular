@@ -8,10 +8,28 @@ using TesteTecnicoConfitec.Infrastructure.Persistence.Core.EntityFramework;
 
 namespace TesteTecnicoConfitec.Infrastructure.Persistence.Usuarios.Repositories
 {
-    public class UsuarioRepository : Repository<Usuario, int>, IUsuarioRepository
+    public class UsuarioRepository : IUsuarioRepository
     {
-        public UsuarioRepository(IUnitOfWork unitOfWork) : base(unitOfWork)
+        private readonly Context _context;
+
+        public UsuarioRepository(Context context)
         {
+            _context = context;
+        }
+
+        public Usuario ObterPeloId(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Remover(Usuario aggregate)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Salvar(Usuario aggregate)
+        {
+            throw new NotImplementedException();
         }
     }
 }

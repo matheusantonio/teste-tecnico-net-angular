@@ -1,28 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "P/soNLgK2PGgozAXoi0XUp0OGKiomh+JdCfthnF77aJU4RaILRrSZj4koxTlj0fNtEsM4BmwmBxE9C+SlgjCSg==",
+  "dgSpecHash": "lytuO0uobXXsbzQOP/pzRRvo958uGzQCj8SzUPqcN76i0wOC46wo3Fh8bs0b2RpIOPEdc2sT7MatfNGoEMmAXQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\mathe\\source\\repos\\TesteTecnicoConfitec\\TesteTecnicoConfitec\\TesteTecnicoConfitec.API.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\mathe\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
-    "C:\\Users\\mathe\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
-    "C:\\Users\\mathe\\.nuget\\packages\\microsoft.entityframeworkcore\\3.1.21\\microsoft.entityframeworkcore.3.1.21.nupkg.sha512",
-    "C:\\Users\\mathe\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\3.1.21\\microsoft.entityframeworkcore.abstractions.3.1.21.nupkg.sha512",
-    "C:\\Users\\mathe\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\3.1.21\\microsoft.entityframeworkcore.analyzers.3.1.21.nupkg.sha512",
-    "C:\\Users\\mathe\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\3.1.21\\microsoft.extensions.caching.abstractions.3.1.21.nupkg.sha512",
-    "C:\\Users\\mathe\\.nuget\\packages\\microsoft.extensions.caching.memory\\3.1.21\\microsoft.extensions.caching.memory.3.1.21.nupkg.sha512",
-    "C:\\Users\\mathe\\.nuget\\packages\\microsoft.extensions.configuration\\3.1.21\\microsoft.extensions.configuration.3.1.21.nupkg.sha512",
-    "C:\\Users\\mathe\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.1.21\\microsoft.extensions.configuration.abstractions.3.1.21.nupkg.sha512",
-    "C:\\Users\\mathe\\.nuget\\packages\\microsoft.extensions.configuration.binder\\3.1.21\\microsoft.extensions.configuration.binder.3.1.21.nupkg.sha512",
-    "C:\\Users\\mathe\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.1.21\\microsoft.extensions.dependencyinjection.3.1.21.nupkg.sha512",
-    "C:\\Users\\mathe\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.21\\microsoft.extensions.dependencyinjection.abstractions.3.1.21.nupkg.sha512",
-    "C:\\Users\\mathe\\.nuget\\packages\\microsoft.extensions.logging\\3.1.21\\microsoft.extensions.logging.3.1.21.nupkg.sha512",
-    "C:\\Users\\mathe\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.21\\microsoft.extensions.logging.abstractions.3.1.21.nupkg.sha512",
-    "C:\\Users\\mathe\\.nuget\\packages\\microsoft.extensions.options\\3.1.21\\microsoft.extensions.options.3.1.21.nupkg.sha512",
-    "C:\\Users\\mathe\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.21\\microsoft.extensions.primitives.3.1.21.nupkg.sha512",
-    "C:\\Users\\mathe\\.nuget\\packages\\system.collections.immutable\\1.7.1\\system.collections.immutable.1.7.1.nupkg.sha512",
-    "C:\\Users\\mathe\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512",
-    "C:\\Users\\mathe\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

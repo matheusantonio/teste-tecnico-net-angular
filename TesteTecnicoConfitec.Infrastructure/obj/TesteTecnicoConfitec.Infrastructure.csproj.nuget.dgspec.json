@@ -166,7 +166,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\mathe\\source\\repos\\TesteTecnicoConfitec\\TesteTecnicoConfitec.Domain\\TesteTecnicoConfitec.Domain.csproj": {
+                "projectPath": "C:\\Users\\mathe\\source\\repos\\TesteTecnicoConfitec\\TesteTecnicoConfitec.Domain\\TesteTecnicoConfitec.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
