@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using TesteTecnicoConfitec.Domain.Usuarios.ValueObjects;
 
 namespace TesteTecnicoConfitec.ReadModels.Usuarios.Models

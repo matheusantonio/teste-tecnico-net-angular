@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TesteTecnicoConfitec.Domain.Core.Exceptions;
+using TesteTecnicoConfitec.Domain.Usuarios.Exceptions;
 
 namespace TesteTecnicoConfitec.Domain.Usuarios.ValueObjects
 {
@@ -10,8 +12,11 @@ namespace TesteTecnicoConfitec.Domain.Usuarios.ValueObjects
         
         public DataDeNascimento(DateTime data)
         {
+            if(data > DateTime.Now)
+            {
+                throw new DomainException(UsuarioExceptionCode.ADataDeNascimentoDeveSerSuperiorADataAtual);
+            }
             Data = data;
-            throw new NotImplementedException();
         }
     }
 }

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using TesteTecnicoConfitec.Domain.Core.Entities;
+﻿using TesteTecnicoConfitec.Domain.Core.Entities;
 using TesteTecnicoConfitec.Domain.Usuarios.Commands;
 using TesteTecnicoConfitec.Domain.Usuarios.ValueObjects;
 

@@ -4,5 +4,15 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.21" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TesteTecnicoConfitec.Domain\TesteTecnicoConfitec.Domain.csproj" />
+    <ProjectReference Include="..\TesteTecnicoConfitec.Infrastructure\TesteTecnicoConfitec.Infrastructure.csproj" />
+    <ProjectReference Include="..\TesteTecnicoConfitec.ReadModels\TesteTecnicoConfitec.ReadModels.csproj" />
+  </ItemGroup>
+
 
 </Project>

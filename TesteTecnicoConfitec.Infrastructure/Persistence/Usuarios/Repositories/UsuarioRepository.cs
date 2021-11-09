@@ -17,19 +17,18 @@ namespace TesteTecnicoConfitec.Infrastructure.Persistence.Usuarios.Repositories
             _context = context;
         }
 
-        public Usuario ObterPeloId(int id)
-        {
-            throw new NotImplementedException();
-        }
+        public Usuario ObterPeloId(int id) => _context.Usuarios.Find(id);
 
         public void Remover(Usuario aggregate)
         {
-            throw new NotImplementedException();
+            _context.Usuarios.Remove(aggregate);
+            _context.SaveChanges();
         }
 
         public void Salvar(Usuario aggregate)
         {
-            throw new NotImplementedException();
+            _context.Usuarios.Add(aggregate);
+            _context.SaveChanges();
         }
     }
 }
