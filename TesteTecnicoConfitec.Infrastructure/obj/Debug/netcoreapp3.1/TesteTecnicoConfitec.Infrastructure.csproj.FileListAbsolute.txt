@@ -1,0 +1,5 @@
+C:\Users\mathe\source\repos\TesteTecnicoConfitec\TesteTecnicoConfitec.Infrastructure\bin\Debug\netcoreapp3.1\TesteTecnicoConfitec.Domain.dll
+C:\Users\mathe\source\repos\TesteTecnicoConfitec\TesteTecnicoConfitec.Infrastructure\bin\Debug\netcoreapp3.1\TesteTecnicoConfitec.ReadModels.dll
+C:\Users\mathe\source\repos\TesteTecnicoConfitec\TesteTecnicoConfitec.Infrastructure\obj\Debug\netcoreapp3.1\TesteTecnicoConfitec.Infrastructure.csprojAssemblyReference.cache
+C:\Users\mathe\source\repos\TesteTecnicoConfitec\TesteTecnicoConfitec.Infrastructure\obj\Debug\netcoreapp3.1\TesteTecnicoConfitec.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\mathe\source\repos\TesteTecnicoConfitec\TesteTecnicoConfitec.Infrastructure\obj\Debug\netcoreapp3.1\TesteTecnicoConfitec.Infrastructure.AssemblyInfo.cs

@@ -1,0 +1,20 @@
+﻿using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Text;
+using TesteTecnicoConfitec.Domain.Usuarios.Entities;
+
+namespace TesteTecnicoConfitec.Infrastructure.Persistence.Core.EntityFramework
+{
+    public class Context : DbContext
+    {
+        public Context(DbContextOptions options) : base(options) { }
+
+        public DbSet<Usuario> Usuarios { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(Context).Assembly);
+        }
+    }
+}
