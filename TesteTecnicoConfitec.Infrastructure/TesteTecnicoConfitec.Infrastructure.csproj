@@ -14,4 +14,8 @@
     <ProjectReference Include="..\TesteTecnicoConfitec.ReadModels\TesteTecnicoConfitec.ReadModels.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Persistence\Usuarios\Mapping\Read\" />
+  </ItemGroup>
+
 </Project>

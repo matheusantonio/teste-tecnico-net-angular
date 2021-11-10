@@ -12,7 +12,6 @@ namespace TesteTecnicoConfitec.Infrastructure.Persistence.Core.EntityFramework
         public Context(DbContextOptions options) : base(options) { }
 
         public DbSet<Usuario> Usuarios { get; set; }
-        public DbSet<UsuarioModel> UsuarioModels { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

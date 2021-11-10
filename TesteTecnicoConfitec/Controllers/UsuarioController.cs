@@ -48,10 +48,10 @@ namespace TesteTecnicoConfitec.API.Controllers
             return Ok();
         }
 
-        [HttpDelete]
-        public IActionResult RemoverUsuario(RemoverUsuario cmd)
+        [HttpDelete("{usuarioId}")]
+        public IActionResult RemoverUsuario(int usuarioId)
         {
-            _router.Send(cmd);
+            _router.Send(new RemoverUsuario { Id = usuarioId });
             return Ok();
         }
     }

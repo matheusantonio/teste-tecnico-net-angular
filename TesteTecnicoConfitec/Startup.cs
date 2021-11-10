@@ -31,6 +31,8 @@ namespace TesteTecnicoConfitec
         {
             services.AddControllers();
 
+            services.AddCors();
+
             services.AddDbContext<Context>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
@@ -58,6 +60,8 @@ namespace TesteTecnicoConfitec
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors(option => option.AllowAnyOrigin());
 
             app.UseAuthorization();
 
