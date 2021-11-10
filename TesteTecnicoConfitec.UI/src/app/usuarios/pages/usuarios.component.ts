@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { UsuarioService } from 'src/app/@shared/services/usuarios.service';
 
 @Component({
     templateUrl: './usuarios.component.html',
@@ -9,8 +10,39 @@ import { Router } from '@angular/router';
 })
 export class UsuariosComponent implements OnInit {
 
+    public usuarios: Array<any> = [];
+
+    public usuarioSelecionado: any = null;
+
+    public criandoUsuario: boolean = false;
+
+    public loading = true;
+
+    constructor(private service : UsuarioService) {}
+
     ngOnInit() {
-        
+        this.carregarUsuarios();
+    }
+
+    public novoUsuario() {
+        this.usuarioSelecionado = null;
+        this.criandoUsuario = true;
+
+    }
+
+    public selecionarUsuario(usuario: any) {
+        this.usuarioSelecionado = usuario;
+        this.criandoUsuario = false;
+    }
+
+    public carregarUsuarios(): void {
+        this.usuarioSelecionado = null;
+        this.criandoUsuario = false;
+        this.service.obterTodos().subscribe(resultado => {
+            this.usuarios = resultado;
+            this.loading = false;
+        });
     }
     
+
 }

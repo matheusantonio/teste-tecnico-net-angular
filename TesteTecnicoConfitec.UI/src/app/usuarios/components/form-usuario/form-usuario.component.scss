@@ -1,3 +1,47 @@
 :host {
 
+    .form-usuario {
+        margin: 14px 10px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-content: flex-start;
+
+        .nome {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-content: flex-start;
+
+            mat-form-field {
+                width: 45%;
+            }
+        }
+
+        .email {
+            mat-form-field {
+                width: 100%;
+            }
+        }
+
+        .data-escolaridade {
+
+            .data-nascimento {
+                margin-right: 24px;
+            }
+
+        }
+
+        .actions {
+            align-self: flex-end;
+
+            .salvar {
+                margin-left: 10px;
+            }
+        }
+    }
+
+    
+
 }

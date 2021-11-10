@@ -14,7 +14,15 @@ export class CardUsuarioComponent implements OnInit {
     public usuario: any;
     
     ngOnInit() {
-        
+        this.usuario.escolaridade = this.mapearEscolaridade(this.usuario.escolaridade);
+    }
+
+    private mapearEscolaridade(escolaridade : number) {
+        if(escolaridade == 0) return 'Infantil';
+        if(escolaridade == 1) return 'Fundamental';
+        if(escolaridade == 2) return 'Médio';
+        if(escolaridade == 3) return 'Superior';
+        return '';
     }
     
 }

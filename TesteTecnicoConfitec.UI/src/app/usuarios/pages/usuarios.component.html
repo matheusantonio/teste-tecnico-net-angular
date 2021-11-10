@@ -1,7 +1,32 @@
 <div class="page">
 
-    <lista-de-usuarios></lista-de-usuarios>
+    
 
-    <mat-card class="detalhmento-do-usuario"></mat-card>
+    <div class="painel">
+        <div class="acoes">
+            <button (click)="novoUsuario()" mat-stroked-button color="primary">Registrar Usuário</button>
+        </div>
+        <lista-de-usuarios *ngIf="!loading" [usuarios]="usuarios" (usuarioSelecionado)="selecionarUsuario($event)"></lista-de-usuarios>
+    </div>
+
+
+    <mat-divider [vertical]="true"></mat-divider>
+
+    <div class="detalhamento">
+
+        <form-usuario 
+            *ngIf="usuarioSelecionado || criandoUsuario" 
+            [usuario]="usuarioSelecionado" 
+            [modoEdicao]="usuarioSelecionado && !criandoUsuario" 
+            (refresh)="carregarUsuarios()" ></form-usuario>
+
+        <div *ngIf="!usuarioSelecionado && !criandoUsuario" class="empty">
+
+            <h1>Nenhum usuário selecionado</h1>
+            <span>Selecione um usuário para fazer alterações</span>
+
+        </div>
+
+    </div>
 
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { UsuarioService } from 'src/app/@shared/services/usuarios.service';
 
 @Component({
@@ -8,16 +8,21 @@ import { UsuarioService } from 'src/app/@shared/services/usuarios.service';
 })
 export class ListaDeUsuariosComponent implements OnInit {
 
+    @Input()
     public usuarios: Array<any> = [];
 
-    constructor(private service : UsuarioService) {}
+    @Output() usuarioSelecionado: EventEmitter<any> = new EventEmitter<any>();
+
+    constructor() {}
 
     ngOnInit() {
 
-        this.service.obterTodos().subscribe(resultado => {
-            this.usuarios = resultado;
-        });
         
+        
+    }
+
+    public selecionarUsuario(usuario: any): void {
+        this.usuarioSelecionado.emit(usuario);
     }
     
 }
