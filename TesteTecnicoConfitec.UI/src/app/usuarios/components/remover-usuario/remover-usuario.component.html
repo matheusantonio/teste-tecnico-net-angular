@@ -1,0 +1,10 @@
+<div class="dialog">
+
+    <h1 md-dialog-title>Remover</h1>
+    <div md-dialog-content class="mensagem">Tem certeza que deseja remover o usuário?</div>
+    <div md-dialog-actions class="acoes">
+      <button mat-stroked-button color="primary" (click)="dialogRef.close(true)">Remover</button>
+      <button mat-stroked-button color="danger" (click)="dialogRef.close(false)">Cancelar</button>
+    </div>
+
+</div>

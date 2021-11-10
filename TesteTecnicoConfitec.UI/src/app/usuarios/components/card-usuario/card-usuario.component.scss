@@ -1,4 +1,50 @@
 :host {
     
+    .card {
+
+        mat-card {
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            .nome {
+                font-weight: bold;
+            }
+
+            .email {
+
+            }
+
+            .data-escolaridade {
+
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+
+                .data-nascimento {
+                    font-style: italic;
+
+                }
+
+                .escolaridade {
+                    color: white;
+                    background: rgb(103, 58, 183);
+                    padding: 4px 8px;
+                    border-radius: 6px;
+
+                }
+
+            }
+
+        }
+    }
 
 }

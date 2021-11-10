@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using TesteTecnicoConfitec.Domain.Usuarios.ValueObjects;
 using TesteTecnicoConfitec.Infrastructure.Persistence.Core.EntityFramework;
 using TesteTecnicoConfitec.ReadModels.Usuarios.Models;
 using TesteTecnicoConfitec.ReadModels.Usuarios.QueryHandlers;
@@ -33,9 +34,23 @@ namespace TesteTecnicoConfitec.Infrastructure.Persistence.Usuarios.QueryHandlers
                 .FirstOrDefault();
         }
 
-        public IList<UsuarioModel> ObterUsuarios()
+        public IList<UsuarioModel> ObterUsuarios(string texto, Escolaridade[] escolaridades)
         {
-            return _context.Usuarios
+            var query = _context.Usuarios.AsQueryable();
+
+            if(!string.IsNullOrEmpty(texto))
+            {
+                query = query.Where(x => x.Nome.PrimeiroNome.Contains(texto) ||
+                                         x.Nome.Sobrenome.Contains(texto) ||
+                                         x.Email.Campo.Contains(texto));
+            }
+
+            if(escolaridades != null && escolaridades.Length > 0)
+            {
+                query = query.Where(x => escolaridades.Contains(x.Escolaridade));
+            }
+
+            return query
                 .Select(u => 
                     new UsuarioModel
                     {

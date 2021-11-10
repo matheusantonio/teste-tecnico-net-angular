@@ -24,8 +24,14 @@ export class UsuarioService {
         return this.http.get<any>(environment.api + "produto", {params : httpParams});
     }*/
 
-    public obterTodos() : Observable<any> {
-        return this.http.get<any>(environment.apiUrl + "usuario/");
+    public obterTodos(texto: string, escolaridades: Array<number>) : Observable<any> {
+
+        let httpParams = new HttpParams();
+
+        if(texto) httpParams = httpParams.append('texto', texto);
+        if(escolaridades.length>0) httpParams = httpParams.append('escolaridades', escolaridades.join(','));
+
+        return this.http.get<any>(environment.apiUrl + "usuario/", { params: httpParams });
     }
 
     public obter(id : number) : Observable<any> {

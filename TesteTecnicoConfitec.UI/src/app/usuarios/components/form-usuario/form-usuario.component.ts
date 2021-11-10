@@ -6,6 +6,8 @@ import { UsuarioService } from 'src/app/@shared/services/usuarios.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AlterarUsuario, RegistrarUsuario } from 'src/app/@shared/commands/usuarios.command';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
+import { RemoverUsuarioComponent } from '../remover-usuario/remover-usuario.component';
 
 @Component({
     selector: 'form-usuario',
@@ -30,7 +32,8 @@ export class FormUsuarioComponent implements OnChanges {
     constructor(
         private service : UsuarioService, 
         private builder: FormBuilder, 
-        private _snackBar: MatSnackBar) {}
+        private _snackBar: MatSnackBar,
+        private dialog: MatDialog) {}
 
     ngOnChanges() {
         if(this.modoEdicao) {
@@ -52,13 +55,13 @@ export class FormUsuarioComponent implements OnChanges {
             sobrenome: [usuario?.sobrenome, Validators.required],
             email: [usuario?.email, [Validators.required, Validators.email]],
             dataDeNascimento: [usuario?.dataDeNascimento, Validators.required],
-            escolaridade: [usuario?.escolaridade.toString(), Validators.required]
+            escolaridade: [usuario?.escolaridade, Validators.required]
         });
     }
 
     public salvar(): void {
         let usuario = this.form.value;
-        usuario.escolaridade = +usuario.escolaridade;
+        //usuario.escolaridade = +usuario.escolaridade;
 
         if(this.modoEdicao){
             let cmd = new AlterarUsuario(usuario);
@@ -77,9 +80,19 @@ export class FormUsuarioComponent implements OnChanges {
     }
     
     public excluir(): void {
-        this.service.remover(this.usuario.id).subscribe(result => {
-            this._snackBar.open("Usuário removido com sucesso", "Fechar", { duration: 3000 })
-            this.refresh.emit();
-        })
+        this.dialog.open(
+            RemoverUsuarioComponent, {
+                height: "224px",
+                width: "344px"
+            })
+        .afterClosed()
+        .subscribe(result => {
+            if(result) {
+                this.service.remover(this.usuario).subscribe(result => {
+                    this._snackBar.open("Usuário removido com sucesso", "Fechar", { duration: 3000 })
+                    this.refresh.emit();
+                });
+            }
+        });
     }
 }

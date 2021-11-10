@@ -9,5 +9,22 @@
         border-radius: 6px;
 
         background: #f4f5f7;
+
+        ng-scrollbar {
+            height: calc(100vh - 245px);
+
+            .card-de-usuario {
+                margin: 14px 10px;
+            }
+        }
+
+        .empty {
+            width: 100%;
+            text-align: center;
+            font-style: italic;
+            margin-top: 24px;
+        }
+
+
     }
 }

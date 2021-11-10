@@ -18,9 +18,15 @@ export class UsuariosComponent implements OnInit {
 
     public loading = true;
 
+    public filtros: any = {}
+
     constructor(private service : UsuarioService) {}
 
     ngOnInit() {
+        this.filtros = {
+            texto: null,
+            escolaridade: []
+        }
         this.carregarUsuarios();
     }
 
@@ -36,9 +42,10 @@ export class UsuariosComponent implements OnInit {
     }
 
     public carregarUsuarios(): void {
+        debugger;
         this.usuarioSelecionado = null;
         this.criandoUsuario = false;
-        this.service.obterTodos().subscribe(resultado => {
+        this.service.obterTodos(this.filtros.texto, this.filtros.escolaridade).subscribe(resultado => {
             this.usuarios = resultado;
             this.loading = false;
         });

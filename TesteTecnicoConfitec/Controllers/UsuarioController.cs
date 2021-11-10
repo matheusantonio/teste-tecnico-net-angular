@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using TesteTecnicoConfitec.Domain.Core.Commands;
 using TesteTecnicoConfitec.Domain.Usuarios.Commands;
+using TesteTecnicoConfitec.Domain.Usuarios.ValueObjects;
 using TesteTecnicoConfitec.ReadModels.Usuarios.QueryHandlers;
 
 namespace TesteTecnicoConfitec.API.Controllers
@@ -23,9 +24,11 @@ namespace TesteTecnicoConfitec.API.Controllers
         }
 
         [HttpGet]
-        public IActionResult ObterTodosOsUsuarios()
+        public IActionResult ObterUsuarios(
+            [FromQuery] string texto = "",
+            [FromQuery] Escolaridade[] escolaridades = null)
         {
-            return Ok(_queryHandler.ObterUsuarios());
+            return Ok(_queryHandler.ObterUsuarios(texto, escolaridades));
         }
 
         [HttpGet("{usuarioId}")]

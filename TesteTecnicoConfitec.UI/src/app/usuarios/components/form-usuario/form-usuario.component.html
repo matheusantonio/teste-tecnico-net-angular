@@ -27,7 +27,7 @@
     
         <div class="data-escolaridade">
     
-            <mat-form-field appearance="fill" class="data-nascimento">
+            <mat-form-field appearance="standard" class="data-nascimento">
                 <mat-label>Data de nascimento</mat-label>
                 <input matInput [matDatepicker]="datepicker" formControlName="dataDeNascimento">
                 <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
@@ -39,13 +39,13 @@
                 </mat-datepicker>
               </mat-form-field>
     
-              <mat-form-field appearance="fill">
+              <mat-form-field appearance="standard">
                 <mat-label>Escolaridade</mat-label>
                 <mat-select formControlName="escolaridade">
-                  <mat-option value=0>Infantil</mat-option>
-                  <mat-option value=1>Fundamental</mat-option>
-                  <mat-option value=2>Medio</mat-option>
-                  <mat-option value=3>Superior</mat-option>
+                  <mat-option [value]="0">Infantil</mat-option>
+                  <mat-option [value]="1">Fundamental</mat-option>
+                  <mat-option [value]="2">Medio</mat-option>
+                  <mat-option [value]="3">Superior</mat-option>
                 </mat-select>
             </mat-form-field>
     
@@ -55,7 +55,7 @@
     
     <div class="actions">
 
-        <button *ngIf="modoEdicao" class="excluir" (click)="excluir()" mat-stroked-button color="danger">Excluir</button>
+        <button *ngIf="modoEdicao" type="button" class="excluir" (click)="excluir()" mat-stroked-button color="danger">Excluir</button>
         <button class="salvar" type="submit" mat-stroked-button color="primary">Salvar</button>
     </div>
 

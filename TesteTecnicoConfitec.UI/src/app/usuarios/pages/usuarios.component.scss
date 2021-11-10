@@ -17,9 +17,21 @@
             height: calc(100vh - 140px);
             width: 664px;
 
-            .acoes {
-                align-self: flex-end;
-                margin-right: 10px;
+            .filtros {
+                margin: 0px 10px;
+
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-content: center;
+
+                .filtro-texto {
+                    width: 200px;
+                }
+
+                .acoes {
+                    align-self: center;
+                }
             }
 
             lista-de-usuarios {

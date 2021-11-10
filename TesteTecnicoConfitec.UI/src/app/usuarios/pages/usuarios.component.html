@@ -3,8 +3,26 @@
     
 
     <div class="painel">
-        <div class="acoes">
-            <button (click)="novoUsuario()" mat-stroked-button color="primary">Registrar Usuário</button>
+        <div class="filtros">
+
+            <mat-form-field class="filtro-texto" appearance="standard">
+                <mat-label>Texto</mat-label>
+                <input matInput placeholder="Texto" [(ngModel)]="filtros.texto" (input)="carregarUsuarios()">
+            </mat-form-field>
+
+            <mat-form-field appearance="standard">
+                <mat-label>Escolaridade</mat-label>
+                <mat-select [(ngModel)]="filtros.escolaridade" multiple (selectionChange)="carregarUsuarios()">
+                  <mat-option [value]="0">Infantil</mat-option>
+                  <mat-option [value]="1">Fundamental</mat-option>
+                  <mat-option [value]="2">Medio</mat-option>
+                  <mat-option [value]="3">Superior</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <div class="acoes">
+                <button (click)="novoUsuario()" mat-stroked-button color="primary">Registrar Usuário</button>
+            </div>
         </div>
         <lista-de-usuarios *ngIf="!loading" [usuarios]="usuarios" (usuarioSelecionado)="selecionarUsuario($event)"></lista-de-usuarios>
     </div>

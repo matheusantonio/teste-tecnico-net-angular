@@ -7,10 +7,12 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker'; 
 import {MatSelectModule} from '@angular/material/select'; 
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatSnackBarModule} from '@angular/material/snack-bar'; 
 import {MatButtonModule} from '@angular/material/button'; 
+import { NgScrollbarModule } from 'ngx-scrollbar';
+import {MatDialogModule} from '@angular/material/dialog'; 
 
 @NgModule({
   imports:[
@@ -31,6 +33,9 @@ import {MatButtonModule} from '@angular/material/button';
       MatInputModule,
       MatSnackBarModule,
       MatButtonModule,
+      NgScrollbarModule,
+      MatDialogModule,
+      FormsModule,
   ],
 })
 export class SharedModule { }

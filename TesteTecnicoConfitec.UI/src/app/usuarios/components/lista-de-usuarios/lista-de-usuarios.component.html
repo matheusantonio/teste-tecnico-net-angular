@@ -1,13 +1,18 @@
 <div class="lista-de-usuarios">
 
-    <div>
+    <div *ngIf="usuarios.length == 0" class="empty">
+        Nenhum usuário encontrado
 
-        <div *ngFor="let usuario of usuarios">
+    </div>
+
+    <ng-scrollbar appearance="standard" *ngIf="usuarios.length > 0">
+
+        <div class="card-de-usuario" *ngFor="let usuario of usuarios">
 
             <card-usuario (click)="selecionarUsuario(usuario)" [usuario]="usuario"></card-usuario>
             
         </div>
 
-    </div>
+    </ng-scrollbar>
 
 </div>
