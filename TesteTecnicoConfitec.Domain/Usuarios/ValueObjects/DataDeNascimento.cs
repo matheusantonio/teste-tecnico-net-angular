@@ -10,6 +10,7 @@ namespace TesteTecnicoConfitec.Domain.Usuarios.ValueObjects
     {
         public DateTime Data { get; private set; }
         
+        private DataDeNascimento() { }
         public DataDeNascimento(DateTime data)
         {
             if(data > DateTime.Now)

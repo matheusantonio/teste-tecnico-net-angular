@@ -7,10 +7,12 @@ using Microsoft.Extensions.Hosting;
 using TesteTecnicoConfitec.Domain.Core.Commands;
 using TesteTecnicoConfitec.Domain.Usuarios.CommandHandlers;
 using TesteTecnicoConfitec.Domain.Usuarios.Commands;
+using TesteTecnicoConfitec.Domain.Usuarios.Repositories;
 using TesteTecnicoConfitec.Infrastructure;
 using TesteTecnicoConfitec.Infrastructure.CQRS;
 using TesteTecnicoConfitec.Infrastructure.Persistence.Core.EntityFramework;
 using TesteTecnicoConfitec.Infrastructure.Persistence.Usuarios.QueryHandlers;
+using TesteTecnicoConfitec.Infrastructure.Persistence.Usuarios.Repositories;
 using TesteTecnicoConfitec.ReadModels.Usuarios.QueryHandlers;
 
 namespace TesteTecnicoConfitec
@@ -35,6 +37,8 @@ namespace TesteTecnicoConfitec
             services.AddScoped<ICommandRouter, CommandRouter>();
 
             services.AddScoped<IUsuarioQueryHandler, UsuarioQueryHandler>();
+
+            services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 
             services.AddScoped<ICommandHandler<RegistrarUsuario>, UsuarioCommandHandler>();
             services.AddScoped<ICommandHandler<AlterarUsuario>, UsuarioCommandHandler>();

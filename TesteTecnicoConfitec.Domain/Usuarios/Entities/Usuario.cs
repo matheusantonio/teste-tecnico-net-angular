@@ -11,6 +11,7 @@ namespace TesteTecnicoConfitec.Domain.Usuarios.Entities
         public DataDeNascimento DataDeNascimento { get; private set; }
         public Escolaridade Escolaridade { get; private set; }
 
+        private Usuario() { }
         public Usuario(RegistrarUsuario cmd)
         {
             Nome = new Nome(cmd.Nome, cmd.Sobrenome);

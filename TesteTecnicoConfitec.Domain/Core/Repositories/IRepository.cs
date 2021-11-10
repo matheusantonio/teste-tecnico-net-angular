@@ -11,6 +11,8 @@ namespace TesteTecnicoConfitec.Domain.Core.Repositories
 
         void Salvar(T aggregate);
 
+        void Atualizar();
+
         void Remover(T aggregate);
     }
 }

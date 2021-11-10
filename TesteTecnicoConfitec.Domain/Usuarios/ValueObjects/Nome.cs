@@ -6,6 +6,8 @@ namespace TesteTecnicoConfitec.Domain.Usuarios.ValueObjects
 {
     public class Nome
     {
+        private Nome() { }
+
         public Nome(string primeiroNome, string sobrenome)
         {
             PrimeiroNome = primeiroNome;

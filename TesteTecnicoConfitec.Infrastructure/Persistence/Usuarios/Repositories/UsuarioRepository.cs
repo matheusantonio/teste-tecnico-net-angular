@@ -30,5 +30,10 @@ namespace TesteTecnicoConfitec.Infrastructure.Persistence.Usuarios.Repositories
             _context.Usuarios.Add(aggregate);
             _context.SaveChanges();
         }
+
+        public void Atualizar()
+        {
+            _context.SaveChanges();
+        }
     }
 }

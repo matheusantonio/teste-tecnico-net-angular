@@ -37,7 +37,7 @@ namespace TesteTecnicoConfitec.Domain.Usuarios.CommandHandlers
             }
 
             aggregate.AlterarUsuario(cmd);
-            _repository.Salvar(aggregate);
+            _repository.Atualizar();
         }
 
         public void Handle(RemoverUsuario cmd)
