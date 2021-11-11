@@ -15,7 +15,7 @@ Para executar o backend, a solução (TesteTecnicoConfitec.sln) pode ser aberta 
 Apesar do escopo do teste ser bem simples, alguns conceitos mais complexos foram utilizados para implementá-lo, como CQRS. Entendo que em contextos simples, nem sempre é necessário aplicar esses conceitos, porém para fins de avaliação, utilizei mesmo assim. Ainda assim, possuo algumas considerações quanto a elementos que deixei de fora, principalmente pelo tempo dado para a execução do teste, mas que acho que seriam interessantes de se mencionar.
 
 * A aplicação não apresenta nenhum tipo de autenticação, porém eu teria usado JWT.
-* Para aplicações mais robustas, usar métodos Async e Await pode gerar um ganho de performance. Para simplificar, não utilizei.
+* Para aplicações mais robustas, usar métodos Async e Await para chamadas de IO, como acesso a banco de dados, pode gerar um ganho de performance. Para simplificar, não utilizei.
 * Para contextos que utilizem eventos, acho que seria interessante sobrescrever a implementação do DbContext para interceptar chamadas a eventos em uma mesma requisição.
 * Em um contexto mais complexo, eu utilizaria a biblioteca Mediatr para implementar o padrão CQRS.
 * Em um contexto em que o disparo de exceções para notificação de erros trouxesse algum custo, eu usaria o Notification Pattern para gerenciar erros no backend
