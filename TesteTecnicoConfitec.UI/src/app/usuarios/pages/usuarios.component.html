@@ -5,15 +5,15 @@
 
             <mat-form-field class="filtro-texto" appearance="standard">
                 <mat-label>Texto</mat-label>
-                <input matInput placeholder="Texto" [(ngModel)]="filtros.texto" (input)="carregarUsuarios()">
+                <input matInput placeholder="Texto" [(ngModel)]="filtros.texto" (input)="recarregarUsuarios()">
             </mat-form-field>
 
             <mat-form-field appearance="standard">
                 <mat-label>Escolaridade</mat-label>
-                <mat-select [(ngModel)]="filtros.escolaridade" multiple (selectionChange)="carregarUsuarios()">
+                <mat-select [(ngModel)]="filtros.escolaridade" multiple (selectionChange)="recarregarUsuarios()">
                   <mat-option [value]="0">Infantil</mat-option>
                   <mat-option [value]="1">Fundamental</mat-option>
-                  <mat-option [value]="2">Medio</mat-option>
+                  <mat-option [value]="2">Médio</mat-option>
                   <mat-option [value]="3">Superior</mat-option>
                 </mat-select>
             </mat-form-field>
@@ -59,7 +59,7 @@
             *ngIf="usuarioSelecionado || criandoUsuario" 
             [usuario]="usuarioSelecionado" 
             [modoEdicao]="usuarioSelecionado && !criandoUsuario" 
-            (refresh)="carregarUsuarios()" ></form-usuario>
+            (refresh)="recarregarUsuarios()" ></form-usuario>
 
         <div *ngIf="!usuarioSelecionado && !criandoUsuario" class="empty">
 

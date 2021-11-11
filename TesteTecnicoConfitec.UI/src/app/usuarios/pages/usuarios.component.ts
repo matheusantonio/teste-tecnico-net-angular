@@ -53,6 +53,11 @@ export class UsuariosComponent implements OnInit {
         });
     }
 
+    public recarregarUsuarios(): void {
+        this.usuarios.clear();
+        this.carregarUsuarios();
+    }
+
     public proximo(): void {
         this.usuarios.next();
         this.carregarUsuarios();

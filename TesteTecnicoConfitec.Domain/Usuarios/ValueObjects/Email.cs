@@ -11,7 +11,7 @@ namespace TesteTecnicoConfitec.Domain.Usuarios.ValueObjects
     {
         public string Campo { get; private set; }
 
-        private readonly string _pattern = @"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$";
+        private readonly string _pattern = @"^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$";
 
         private Email() { }
         public Email(string email)

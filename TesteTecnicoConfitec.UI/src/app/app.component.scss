@@ -1,6 +1,9 @@
 :host {
     .toolbar {
         mat-toolbar {
+            mat-icon {
+                margin-left: 150px;
+            }
             span {
                 margin-left: 15px;
             }

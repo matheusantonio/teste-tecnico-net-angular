@@ -8,6 +8,7 @@ import { AlterarUsuario, RegistrarUsuario } from 'src/app/@shared/commands/usuar
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { RemoverUsuarioComponent } from '../remover-usuario/remover-usuario.component';
+import { UsuariosCustomValidators } from 'src/app/@shared/validators/date.validator';
 
 @Component({
     selector: 'form-usuario',
@@ -53,8 +54,8 @@ export class FormUsuarioComponent implements OnChanges {
             id: [usuario?.id],
             nome: [usuario?.nome, Validators.required],
             sobrenome: [usuario?.sobrenome, Validators.required],
-            email: [usuario?.email, [Validators.required, Validators.email]],
-            dataDeNascimento: [usuario?.dataDeNascimento, Validators.required],
+            email: [usuario?.email, [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
+            dataDeNascimento: [usuario?.dataDeNascimento, [Validators.required, UsuariosCustomValidators.dateValidator]],
             escolaridade: [usuario?.escolaridade, Validators.required]
         });
     }
