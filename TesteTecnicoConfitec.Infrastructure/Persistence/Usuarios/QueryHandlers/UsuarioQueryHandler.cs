@@ -1,9 +1,12 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using TesteTecnicoConfitec.Domain.Core.Entities;
 using TesteTecnicoConfitec.Domain.Usuarios.ValueObjects;
 using TesteTecnicoConfitec.Infrastructure.Persistence.Core.EntityFramework;
+using TesteTecnicoConfitec.Infrastructure.Persistence.Core.Extensions;
 using TesteTecnicoConfitec.ReadModels.Usuarios.Models;
 using TesteTecnicoConfitec.ReadModels.Usuarios.QueryHandlers;
 
@@ -12,29 +15,25 @@ namespace TesteTecnicoConfitec.Infrastructure.Persistence.Usuarios.QueryHandlers
     public class UsuarioQueryHandler : IUsuarioQueryHandler
     {
         private readonly Context _context;
+        private readonly IMapper _mapper;
 
-        public UsuarioQueryHandler(Context context)
+        public UsuarioQueryHandler(Context context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         public UsuarioModel ObterUsuario(int usuarioId)
         {
-            return _context.Usuarios
+            var usuario = _context.Usuarios
                 .Where(x => x.Id == usuarioId)
-                .Select(u => new UsuarioModel
-                {
-                    Id = u.Id,
-                    Nome = u.Nome.PrimeiroNome,
-                    Sobrenome = u.Nome.Sobrenome,
-                    Email = u.Email.Campo,
-                    DataDeNascimento = u.DataDeNascimento.Data,
-                    Escolaridade = u.Escolaridade
-                })
                 .FirstOrDefault();
+
+            var result = _mapper.Map<UsuarioModel>(usuario);
+            return result;
         }
 
-        public IList<UsuarioModel> ObterUsuarios(string texto, Escolaridade[] escolaridades)
+        public PaginatedList<UsuarioModel> ObterUsuarios(string texto, Escolaridade[] escolaridades, int pagina = 0, int limite = 10)
         {
             var query = _context.Usuarios.AsQueryable();
 
@@ -50,17 +49,10 @@ namespace TesteTecnicoConfitec.Infrastructure.Persistence.Usuarios.QueryHandlers
                 query = query.Where(x => escolaridades.Contains(x.Escolaridade));
             }
 
-            return query
-                .Select(u => 
-                    new UsuarioModel
-                    {
-                        Id = u.Id,
-                        Nome = u.Nome.PrimeiroNome,
-                        Sobrenome = u.Nome.Sobrenome,
-                        Email = u.Email.Campo,
-                        DataDeNascimento = u.DataDeNascimento.Data,
-                        Escolaridade = u.Escolaridade
-                    }).ToList();
+            var usuarios = query.Paginate(pagina, limite);
+            var result = _mapper.Map<PaginatedList<UsuarioModel>>(usuarios);
+
+            return result;
         }
     }
 }

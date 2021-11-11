@@ -5,7 +5,8 @@ import { UsuariosComponent } from './usuarios/pages/usuarios.component';
 const routes: Routes = [
   {
     path: 'app', component: UsuariosComponent
-  }
+  },
+  { path: '**', component: UsuariosComponent }
 ];
 
 @NgModule({

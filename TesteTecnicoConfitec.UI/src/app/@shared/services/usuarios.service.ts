@@ -24,12 +24,20 @@ export class UsuarioService {
         return this.http.get<any>(environment.api + "produto", {params : httpParams});
     }*/
 
-    public obterTodos(texto: string, escolaridades: Array<number>) : Observable<any> {
+    public obterTodos(texto: string, escolaridades: Array<number>, pagina: number, limite: number) : Observable<any> {
 
         let httpParams = new HttpParams();
 
         if(texto) httpParams = httpParams.append('texto', texto);
-        if(escolaridades.length>0) httpParams = httpParams.append('escolaridades', escolaridades.join(','));
+
+        if(escolaridades.length>0) {
+            escolaridades.forEach(escolaridade => {
+                httpParams = httpParams.append('escolaridades', escolaridade);
+            });
+        }
+        
+        if(pagina) httpParams = httpParams.append('pagina', pagina);
+        if(limite) httpParams = httpParams.append('limite', limite);
 
         return this.http.get<any>(environment.apiUrl + "usuario/", { params: httpParams });
     }

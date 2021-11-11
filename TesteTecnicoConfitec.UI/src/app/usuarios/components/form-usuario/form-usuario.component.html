@@ -56,7 +56,7 @@
     <div class="actions">
 
         <button *ngIf="modoEdicao" type="button" class="excluir" (click)="excluir()" mat-stroked-button color="danger">Excluir</button>
-        <button class="salvar" type="submit" mat-stroked-button color="primary">Salvar</button>
+        <button class="salvar" type="submit" mat-stroked-button color="primary" [disabled]="form.invalid">Salvar</button>
     </div>
 
     

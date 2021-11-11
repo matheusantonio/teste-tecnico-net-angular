@@ -37,6 +37,14 @@
             lista-de-usuarios {
                 flex: 1;
             }
+
+            .paginacao {
+                align-self: center;
+
+                button {
+                    margin: 4px 8px;
+                }
+            }
         }
 
         mat-divider {

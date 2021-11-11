@@ -26,9 +26,10 @@ namespace TesteTecnicoConfitec.API.Controllers
         [HttpGet]
         public IActionResult ObterUsuarios(
             [FromQuery] string texto = "",
-            [FromQuery] Escolaridade[] escolaridades = null)
+            [FromQuery] Escolaridade[] escolaridades = null,
+            int pagina = 0, int limite = 10)
         {
-            return Ok(_queryHandler.ObterUsuarios(texto, escolaridades));
+            return Ok(_queryHandler.ObterUsuarios(texto, escolaridades, pagina, limite));
         }
 
         [HttpGet("{usuarioId}")]

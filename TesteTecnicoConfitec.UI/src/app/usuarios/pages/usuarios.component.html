@@ -1,7 +1,5 @@
 <div class="page">
 
-    
-
     <div class="painel">
         <div class="filtros">
 
@@ -24,7 +22,32 @@
                 <button (click)="novoUsuario()" mat-stroked-button color="primary">Registrar Usuário</button>
             </div>
         </div>
-        <lista-de-usuarios *ngIf="!loading" [usuarios]="usuarios" (usuarioSelecionado)="selecionarUsuario($event)"></lista-de-usuarios>
+
+        <lista-de-usuarios 
+            *ngIf="!loading" 
+            [usuarios]="usuarios.itens"
+            (usuarioSelecionado)="selecionarUsuario($event)"
+        ></lista-de-usuarios>
+
+        <div class="paginacao">
+            <button 
+                mat-mini-fab 
+                (click)="anterior()" 
+                color="primary" 
+                [disabled]="ePrimeiraPagina"
+            >
+                <mat-icon>chevron_left</mat-icon>
+            </button>
+            <button 
+                mat-mini-fab 
+                (click)="proximo()" 
+                color="primary"
+                [disabled]="eUltimaPagina"
+            >
+                <mat-icon>chevron_right</mat-icon>
+            </button>
+        </div>
+
     </div>
 
 

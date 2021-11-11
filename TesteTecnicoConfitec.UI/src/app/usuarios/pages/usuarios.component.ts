@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { UsuarioService } from 'src/app/@shared/services/usuarios.service';
+import { PaginatedList } from 'src/app/@shared/models/paginatedList.model';
 
 @Component({
     templateUrl: './usuarios.component.html',
@@ -10,7 +11,7 @@ import { UsuarioService } from 'src/app/@shared/services/usuarios.service';
 })
 export class UsuariosComponent implements OnInit {
 
-    public usuarios: Array<any> = [];
+    public usuarios: PaginatedList<any> = new PaginatedList();
 
     public usuarioSelecionado: any = null;
 
@@ -42,14 +43,33 @@ export class UsuariosComponent implements OnInit {
     }
 
     public carregarUsuarios(): void {
-        debugger;
+        this.loading = true;
         this.usuarioSelecionado = null;
         this.criandoUsuario = false;
-        this.service.obterTodos(this.filtros.texto, this.filtros.escolaridade).subscribe(resultado => {
-            this.usuarios = resultado;
+
+        this.service.obterTodos(this.filtros.texto, this.filtros.escolaridade, this.usuarios.pagina, this.usuarios.limite).subscribe(resultado => {
+            this.usuarios.load(resultado);
             this.loading = false;
         });
     }
-    
+
+    public proximo(): void {
+        this.usuarios.next();
+        this.carregarUsuarios();
+    }
+
+    public anterior(): void {
+        this.usuarios.previous();
+        this.carregarUsuarios();
+    }
+
+    public get eUltimaPagina(): boolean {
+        return this.usuarios.pagina == Math.ceil(this.usuarios.total / this.usuarios.limite) -1 || 
+                this.usuarios.total <= this.usuarios.limite;
+    }
+
+    public get ePrimeiraPagina(): boolean {
+        return this.usuarios.pagina == 0;
+    }
 
 }

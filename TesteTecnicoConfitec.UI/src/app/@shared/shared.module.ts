@@ -13,6 +13,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatButtonModule} from '@angular/material/button'; 
 import { NgScrollbarModule } from 'ngx-scrollbar';
 import {MatDialogModule} from '@angular/material/dialog'; 
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   imports:[
@@ -36,6 +37,7 @@ import {MatDialogModule} from '@angular/material/dialog';
       NgScrollbarModule,
       MatDialogModule,
       FormsModule,
+      MatIconModule
   ],
 })
 export class SharedModule { }

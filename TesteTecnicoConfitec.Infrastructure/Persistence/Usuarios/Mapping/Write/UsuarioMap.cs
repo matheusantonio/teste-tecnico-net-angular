@@ -30,10 +30,6 @@ namespace TesteTecnicoConfitec.Infrastructure.Persistence.Usuarios.Mapping.Write
                 ud.Property(d => d.Data).HasColumnName("DataNascimento");
             });
 
-            //builder.Property(x => x.Nome.PrimeiroNome).HasColumnName("Nome").IsRequired();
-            //builder.Property(x => x.Nome.Sobrenome).HasColumnName("Sobrenome").IsRequired();
-            //builder.Property(x => x.Email.Campo).HasColumnName("Email").IsRequired();
-            //builder.Property(x => x.DataDeNascimento).HasColumnName("DataNascimento").IsRequired();
             builder.Property(x => x.Escolaridade).HasColumnName("Escolaridade").IsRequired();
         }
     }

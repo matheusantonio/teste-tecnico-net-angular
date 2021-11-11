@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.21" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.21" />
   </ItemGroup>
@@ -12,10 +13,6 @@
   <ItemGroup>
     <ProjectReference Include="..\TesteTecnicoConfitec.Domain\TesteTecnicoConfitec.Domain.csproj" />
     <ProjectReference Include="..\TesteTecnicoConfitec.ReadModels\TesteTecnicoConfitec.ReadModels.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Persistence\Usuarios\Mapping\Read\" />
   </ItemGroup>
 
 </Project>
